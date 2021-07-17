@@ -72,10 +72,10 @@ class BaseSteps:
     def refresh_page(self):
         self.browser.refresh()
 
-    @allure.step('Заполнение инпута')
     def fill_input(self, element: WebElement, value: str):
-        self.clear_input(element)
-        element.send_keys(value)
+        with allure.step('Заполнение инпута'):
+            self.clear_input(element)
+            element.send_keys(value)
         logger.info('fill input')
 
     def scroll_page(self):
@@ -84,8 +84,9 @@ class BaseSteps:
             "window.scrollTo(0, document.body.scrollHeight);"
         )
 
-    @allure.step('Очистка поля ввода')
-    def clear_input(self, element: WebElement):
+    @staticmethod
+    def clear_input(element: WebElement):
+        """очистка поля ввода"""
         element.clear()
         logger.info('clear input')
 
