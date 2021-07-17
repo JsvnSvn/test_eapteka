@@ -1,7 +1,7 @@
 import pytest
 import allure
 
-from fragments.main_page_fragments.search_fragment.search_steps import SearchSteps
+from pages.search_page.search_page_steps import SearchPageSteps
 
 
 @allure.epic('WEB-auto')
@@ -11,7 +11,7 @@ class TestSearch:
     @pytest.mark.desktop
     @allure.title('Поиск и переход на детальную страницу товара с плашкой "Только по рецепту"')
     def test_search_product_recipe_strict(self, browser):
-        page = SearchSteps(browser)
+        page = SearchPageSteps(browser)
         page.open()
         page.accept_region()
         page.fill_search_input('Фенибут')
