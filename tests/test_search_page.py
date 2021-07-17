@@ -19,12 +19,14 @@ class TestSearch:
         page.go_to_detail_product_recipe_strict()
 
 
+@allure.epic('WEB-auto')
+@allure.feature('Поиск')
 class TestSearchMobile:
 
     @pytest.mark.mobile
     @allure.title('Поиск и переход на детальную страницу товара с плашкой "Только по рецепту" в мобильной версии')
     def test_mobile_search_product_recipe_strict(self, browser):
-        page = SearchSteps(browser)
+        page = SearchPageSteps(browser)
         page.open()
         page.accept_region()
         page.close_notification()
