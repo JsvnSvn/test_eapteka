@@ -19,6 +19,8 @@ class TestSearch:
         page.go_to_detail_product_recipe_strict()
 
 
+@allure.epic('WEB-auto')
+@allure.feature('Поиск')
 class TestSearchMobile:
 
     @pytest.mark.mobile
