@@ -90,4 +90,9 @@ class BaseSteps:
         element.clear()
         logger.info('clear input')
 
+    @allure.step('Проверка на соответствие')
+    def assert_equal(self, expected_result, result):
+        assert expected_result == result
+
+
 

@@ -9,8 +9,9 @@
 ### Подготовка к запуску тестов
 - установить глобально python 3.8
 - установить глобально poetry
+- установить allure (brew install allure)
 - скачать PyCharm
-- создать проект Pure Python, интепритатор: 3.8
+- создать проект Pure Python, интерпретатор: 3.8
 - склонировать репозиторий https://github.com/JsvnSvn/test_eapteka.git
 - перейти в папку проекта
 - установить зависимости (poetry install)
