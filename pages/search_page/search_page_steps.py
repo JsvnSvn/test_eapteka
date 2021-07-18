@@ -61,8 +61,10 @@ class SearchPageSteps(BaseSteps):
         product: WebElement = choice(recipe_strict_list)
         product_title: WebElement = product.find_element(*self.locators.PRODUCT_TITLE)
         product_title_text: str = product_title.text
+        logger.info(f'Название на странице поиска: {product_title_text}')
         product_title.click()
         self.is_element_present(self.locators.PRODUCT_DETAIL_CARD_TITLE)
         product_detail_title_text: str = self.find_element(*self.locators.PRODUCT_DETAIL_CARD_TITLE).text
-        assert product_title_text in product_detail_title_text
+        logger.info(f'Название на странице товара: {product_detail_title_text}')
+        self.assert_equal(expected_result=product_title_text, result=product_detail_title_text)
         logger.info('go to detail product with recipe strict')
